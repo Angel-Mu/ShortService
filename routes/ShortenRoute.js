@@ -95,4 +95,25 @@ module.exports = function(app, router) {
 		.delete(function (req, res, next){
 			next(new Error("DELETE - /api/shorten/:id Not implemented Yet!"));
 		});
+
+	router.route('*')
+		.get(function(req, res, next){
+			var prefix = req.url.split('/')[1];
+			UrlsModel.findOne({shortened:prefix}, function(err, data){
+				if(err){
+					next(err);
+					return;
+				}
+				var string_url = "";
+				var sub_http = 'http://';
+				var subs_https = 'https://';
+				var protocol = (data.original.indexOf(subs_https) > -1) ? '' : sub_http;
+				if(data.original){
+					string_url = data.original.split('http://');
+					string_url = string_url[string_url.length-1];
+				}
+				res.redirect(protocol + string_url);
+			})
+			
+		})
 };
