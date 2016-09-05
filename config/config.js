@@ -3,8 +3,10 @@ var path = require("path"),
 
 module.exports = {
 	production: {
-		db: 'mongodb://localhost/shortservice_db',
-		url: 'http://localhost:8000',
+		// db: 'mongodb://localhost/shortservice_db',
+		// url: 'http://localhost:8000',
+		db: "mongodb://Angel:4321@ds019856.mlab.com:19856/heroku_l9f2phct",
+		url: 'https://shorturlsapp.herokuapp.com',
 		root: rootPath,
 		app: {
 			name: 'ShortSevice'
