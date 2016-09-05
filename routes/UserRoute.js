@@ -10,7 +10,7 @@ module.exports = function(app, router) {
 
 
 	// Encript specific routes
-	router.use('/api', expressJwt({secret: app.secret}));	
+	// router.use('/api', expressJwt({secret: app.secret}));	
 
 	// server routes
 	// handle things like api calls
@@ -28,18 +28,8 @@ module.exports = function(app, router) {
 			// });
 		})
 		.post(function (req, res, next){
-			next(new Error("POST - /api/users Not implemented Yet!"));
-			// Post new user service example
-			// var user =  new User(req.body);
-			// user.save(function(err){
-			// 	if(err){
-			// 		next(err);
-			// 	}else{
-			// 		log.console("se ha guardado user ");
-			// 		res.send(200,user);
-			// 		next();
-			// 	}
-			// });
+			// next(new Error("POST - /api/users Not implemented Yet!"));
+			createUser(req, res, next);
 		});
 
 	router.route('/api/users/:id')

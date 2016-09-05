@@ -104,6 +104,9 @@ module.exports = function(app, router) {
 					next(err);
 					return;
 				}
+				if(!data){
+					res.redirect('/#/');
+				}
 				var string_url = "";
 				var sub_http = 'http://';
 				var subs_https = 'https://';
@@ -114,6 +117,5 @@ module.exports = function(app, router) {
 				}
 				res.redirect(protocol + string_url);
 			})
-			
 		})
 };

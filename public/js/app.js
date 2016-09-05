@@ -10,6 +10,10 @@
 			templateUrl: 'pages/app.html',
 			controller: 'MainController'
 		})
+		.when('/login', {
+			templateUrl: 'pages/login.html',
+			controller: 'LoginController'
+		})
 	});
 
 	// create the controller and inject Angular's $scope
