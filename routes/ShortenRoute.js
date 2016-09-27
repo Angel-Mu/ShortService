@@ -106,6 +106,7 @@ module.exports = function(app, router) {
 				}
 				if(!data){
 					res.redirect('/#/');
+					return;
 				}
 				var string_url = "";
 				var sub_http = 'http://';

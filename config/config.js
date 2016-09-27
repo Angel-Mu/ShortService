@@ -15,7 +15,7 @@ module.exports = {
 	},
 	development: {
 		db: "mongodb://localhost/shortservice_db_dev",
-		url: 'https://localhost:8010',
+		url: 'http://localhost:8010',
 		root: rootPath,
 		app: {
 			name: 'ShortService Dev'
