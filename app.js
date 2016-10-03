@@ -87,6 +87,7 @@ process.on('uncaughtException', function(err) {
 //Log server is running
 server.listen(app.get('port'), function() {
 	log.info("ShortService server is running on " + config.url);
-	var spawn = require('child_process').spawn
-	spawn('open',  [config.url]);
+	// Opens browser to view App
+	// var spawn = require('child_process').spawn
+	// spawn('open',  [config.url]);
 });
