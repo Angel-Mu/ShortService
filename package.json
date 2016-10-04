@@ -1,63 +1,74 @@
 {
-	"name": "ShortService",
-	"main": "app.js",
-	"version": "0.0.1",
-	"private": true,
-	"contribuitors": [{
-		"name": "Angel Malavar",
-		"email": "angel.malavar@gmail.com"
-	}],
-	"scripts": {
-		"start": "NODE_ENV=production node app.js",
-		"dev": "nodemon app.js | node_modules/bunyan/bin/bunyan",
-		"build": "webpack --watch",
-		"test": "NODE_ENV=test node start app.js",
-		"dev_win": "SET NODE_ENV=develop nodemon app.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:Angel-Mu/ShortService.git"
-	},
-	"dependencies": {
-		"async": "0.9.x",
-		"axios": "^0.14.0",
-		"body-parser": "~1.0.0",
-		"bunyan": "^1.4.0",
-		"express": "^4.0.0",
-		"express-jwt": "^0.5.1",
-		"express-validator": "2.3.x",
-		"jsonwebtoken": "^3.2.0",
-		"method-override": "~1.0.0",
-		"mongoose": "4.0.x",
-		"morgan": "~1.0.0",
-		"nodemailer": "1.1.x",
-		"passport": "0.2.x",
-		"passport-local": "1.0.x",
-		"passport-local-mongoose": "0.3.x",
-		"react": "^15.3.2",
-		"react-dom": "^15.3.2",
-		"react-router": "^2.8.1",
-		"react-redux": "^4.4.5",
-		"redux": "^3.6.0",
-		"redux-thunk": "^2.1.0",
-		"socket.io": "^1.3.2"
-	},
-	"devDependencies": {
-		"babel-core": "^6.7.6",
-		"babel-loader": "^6.2.4",
-		"babel-plugin-add-module-exports": "^0.1.2",
-		"babel-plugin-react-html-attrs": "^2.0.0",
-		"babel-plugin-transform-class-properties": "^6.3.13",
-		"babel-plugin-transform-decorators-legacy": "^1.3.4",
-		"babel-preset-es2015": "^6.3.13",
-		"babel-preset-react": "^6.3.13",
-		"babel-preset-stage-0": "^6.3.13",
-		"css-loader": "^0.25.0",
-		"extract-text-webpack-plugin": "^1.0.1",
-		"node-sass": "^3.10.0",
-		"sass-loader": "^4.0.2",
-		"style-loader": "^0.13.1",
-		"webpack": "^1.13.2",
-		"webpack-dev-server": "^1.16.1"
-	}
+  "name": "ShortService",
+  "main": "app.js",
+  "version": "0.0.1",
+  "private": true,
+  "contribuitors": [
+    {
+      "name": "Angel Malavar",
+      "email": "angel.malavar@gmail.com"
+    }
+  ],
+  "scripts": {
+    "start": "NODE_ENV=production node app.js",
+    "dev": "nodemon app.js | node_modules/bunyan/bin/bunyan",
+    "build": "webpack --watch",
+    "test": "NODE_ENV=test node start app.js",
+    "dev_win": "SET NODE_ENV=develop nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Angel-Mu/ShortService.git"
+  },
+  "dependencies": {
+    "async": "0.9.x",
+    "axios": "^0.14.0",
+    "body-parser": "~1.0.0",
+    "bunyan": "^1.4.0",
+    "express": "^4.0.0",
+    "express-jwt": "^0.5.1",
+    "express-validator": "2.3.x",
+    "jsonwebtoken": "^3.2.0",
+    "method-override": "~1.0.0",
+    "mongoose": "4.0.x",
+    "morgan": "~1.0.0",
+    "nodemailer": "1.1.x",
+    "passport": "0.2.x",
+    "passport-local": "1.0.x",
+    "passport-local-mongoose": "0.3.x",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.8.1",
+    "react-tools": "^0.13.3",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.1.0",
+    "socket.io": "^1.3.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.7.6",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-plugin-react-html-attrs": "^2.0.0",
+    "babel-plugin-transform-class-properties": "^6.3.13",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "babel-register": "^6.16.3",
+    "chai": "^3.0.0",
+    "css-loader": "^0.25.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "gulp": "^3.9.0",
+    "gulp-mocha": "^2.1.2",
+    "jsdom": "^5.4.3",
+    "node-sass": "^3.10.0",
+    "proxyquire": "^1.5.0",
+    "sass-loader": "^4.0.2",
+    "sinon": "^1.15.4",
+    "sinon-chai": "^2.8.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  }
 }
