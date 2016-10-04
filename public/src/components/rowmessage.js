@@ -13,7 +13,7 @@ export default class RowMessage extends Component {
       <div className="row" style={style}>
 				<div className="col-sm-6 col-sm-offset-3">
 					<div className="alert alert-info">
-						<strong>Congrats!</strong> <a href={href}>{origin}/{val}</a>
+						<strong>Congrats!</strong> <a target="_blank" href={href}>{origin}/{val}</a>
 					</div>
 				</div>
 			</div>

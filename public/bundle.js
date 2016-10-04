@@ -30835,7 +30835,7 @@
 	            " ",
 	            _react2.default.createElement(
 	              "a",
-	              { href: href },
+	              { target: "_blank", href: href },
 	              origin,
 	              "/",
 	              val
