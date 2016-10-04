@@ -1,19 +1,20 @@
 import axios from 'axios';
-import { TEST_ACTION } from './types';
+import { POST_SHORTEN } from './types';
 
-const API_URL = 'http://localhost:3000/api';
+// const API_URL = 'http://localhost:3000/api';
 
-export function testAction() {
-	return function(dispatch) {
-		axios.get(`/helloworld`)
+export function postShorten(original) {
+	return function(cb) {
+		console.log(original)
+		axios.post('/api/shorten', {
+				original: original
+			})
 			.then(response => {
-				dispatch({
-					type: TEST_ACTION,
-					payload: response.data
-				});
+				cb({type: POST_SHORTEN, payload: response.data});
 			})
 			.catch((error) => {
 				console.log(error);
+				cb({error:error});
 			})
 	}
 }

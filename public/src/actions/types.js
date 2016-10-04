@@ -1,1 +1,1 @@
-export const TEST_ACTION = 'test_action';
+export const POST_SHORTEN = 'post_shorten';
