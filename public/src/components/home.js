@@ -13,8 +13,8 @@ function mapStateToProps(state) {
 
 class Home extends Component {
 	constructor(){
-			super();
-			this.state = {original:''};
+		super();
+		this.state = {original:''};
 	}
 	componentWillReceiveProps (nextProps) {
 		this.setState({showResult: !this.state.showResult, original:''});
