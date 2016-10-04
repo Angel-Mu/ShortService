@@ -105,7 +105,7 @@ module.exports = function(app, router) {
 					return;
 				}
 				if(!data){
-					res.redirect('/#/');
+					res.sendfile('public/index.html');
 					return;
 				}
 				var string_url = "";

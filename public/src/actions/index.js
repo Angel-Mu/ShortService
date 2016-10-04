@@ -5,7 +5,6 @@ import { POST_SHORTEN } from './types';
 
 export function postShorten(original) {
 	return function(cb) {
-		console.log(original)
 		axios.post('/api/shorten', {
 				original: original
 			})
@@ -14,7 +13,7 @@ export function postShorten(original) {
 			})
 			.catch((error) => {
 				console.log(error);
-				cb({error:error});
+				cb({message:error.message});
 			})
 	}
 }

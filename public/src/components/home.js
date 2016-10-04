@@ -1,38 +1,34 @@
 'use strict'
 import React, { Component } from "react";
 import ReactDom from 'react-dom';
-
 import { postShorten } from '../actions/index.js';
 import { connect } from 'react-redux';
-
 import Container from './container';
-import Footer from  './Footer'
+import RowMessage from  './rowmessage';
+import Footer from  './footer';
 
-function mapStateToProps(state) {  
-	return {
-		shorten_reducer: state.shorten_reducer
-	};
+function mapStateToProps(state) {
+	return state.shorten_reducer.data || {};
 }
 
-
-class Home extends Component {  
+class Home extends Component {
 	constructor(){
 			super();
 			this.state = {original:''};
 	}
+	componentWillReceiveProps (nextProps) {
+		this.setState({showResult: !this.state.showResult, original:''});
+	}
 	getShortenURL() {
-		console.log(this);
 		this.props.postShorten(this.state.original)
-			// .then((err, data) => {
-			// 	console.log(err, data);
-			// })
 	}
 	handleSubmit(e) {
 		e.preventDefault();
 		this.getShortenURL();
 	}
 	handleChange(e) {
-		this.setState({original:e.target.value});
+		// Returns showResult false everytime input changed hidding alert message
+		this.setState({original:e.target.value, showResult:false});
 	}
   render() {
     return (
@@ -43,12 +39,13 @@ class Home extends Component {
 						<div className="col-sm-6 col-sm-offset-3">
 							<form action="" onSubmit={this.handleSubmit.bind(this)} className="form">
 								<div className="form-group">
-									<input ref="original" value={this.state.original} onChange={this.handleChange.bind(this)} className="form-control" type="text" placeholder="ej: http://ejemplo.com" />
+									<input value={this.state.original} onChange={this.handleChange.bind(this)} className="form-control" type="text" placeholder="ej: http://ejemplo.com" />
 								</div>
 								<button disabled={!this.state.original || this.state.original === ''} className="btn btn-primary" onClick={this.getShortenURL.bind(this)} type="button" > GO! <i className="glyphicon glyphicon-chevron-right"></i></button>
 							</form>
 						</div>
 					</div>
+					{this.state.showResult ? <RowMessage val={this.props.shortened}/> : null}
 	    	</Container>
 	    	<Footer />
     	</div>
@@ -57,3 +54,4 @@ class Home extends Component {
 }
 
 export default connect(mapStateToProps, { postShorten })(Home);
+
